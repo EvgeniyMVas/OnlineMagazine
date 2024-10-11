@@ -1,0 +1,16 @@
+﻿@model Product
+@{
+	ViewData["Title"] = "Информация о продукте";
+}
+<h2>@Model.Name</h2>
+
+<div>
+    <p><b>Описание:</b> @Model.Description</p>
+    <p><b>Категория:</b> @Model.Category</p>
+    <p><b>Цена:</b> @Model.Price грн.</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактировать</a>
+<a asp-action="Index" class="btn btn-secondary">Вернуться к списку</a>
+
+<link rel="stylesheet" asp-href-include="~/css/*.css" />

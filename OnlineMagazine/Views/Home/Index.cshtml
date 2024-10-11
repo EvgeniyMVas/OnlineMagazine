@@ -1,0 +1,31 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Home Page Market";
+   
+}
+
+
+<div class="col p-3"></div>
+<div class="row table-container">
+    <table class="table table-success table-striped">
+        <tr><th>Название продукта</th><th>Описание</th><th>Категория</th><th>Цена  грн.</th><th></th></tr>
+        <tbody class="table-group-divider">
+            @foreach (var item in Model)
+
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Category</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">Просмотреть</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
+
